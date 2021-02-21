@@ -6,6 +6,12 @@
 	<artifactId>ip-geolocator</artifactId>
 	<version>1.0</version>
 	<description>Java class library for obtaining geolocation information of an IP address.</description>
+	<distributionManagement>
+  <site>
+    <id>shrek</id>
+    <url>scp://zoltanszilagyi@shrek.unideb.hu:2222/home/zoltanszilagyi/public_html/${project.artifactId}</url>
+  </site>
+</distributionManagement>
 	<developers>
 		<developer>
 			<id>Muszkitosz</id>
@@ -52,6 +58,18 @@
 	</dependencies>
 	<build>
 		<plugins>
+			<plugin>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-site-plugin</artifactId>
+  <version>3.9.1</version>
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.maven.wagon</groupId>
+      <artifactId>wagon-ssh</artifactId>
+      <version>3.4.2</version>
+    </dependency>
+  </dependencies>
+</plugin>
 			<plugin>
   				<groupId>org.apache.maven.plugins</groupId>
   				<artifactId>maven-dependency-plugin</artifactId>
